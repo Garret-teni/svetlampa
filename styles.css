@@ -76,6 +76,7 @@ a { color: inherit; text-decoration: none; }
 .card__media { height: 190px; background: linear-gradient(135deg, #e7ddcd, #d9c6aa); display: flex; align-items: center; justify-content: center; color: #8a7a63; font-size: .9rem; position: relative; }
 .card__media::after { content: var(--ph, 'Фото скоро будет'); position: absolute; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.card__media:has(img)::after { display: none; }
 .card__title { padding: 16px 16px 4px; font-size: 1.1rem; }
 .card__desc { padding: 0 16px; color: var(--muted); font-size: .92rem; flex: 1; }
 .card__foot { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 18px; }
