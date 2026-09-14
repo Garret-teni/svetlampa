@@ -6,24 +6,27 @@ const TG_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
 function buildMessage(form) {
   const fd = new FormData(form);
-  const parts = ['🔔 Новая заявка с сайта СветЛампа'];
+  const parts = ['НОВАЯ ЗАЯВКА с сайта СветЛампа'];
   const push = (label, val) => {
     const v = (val || '').toString().trim();
-    if (v) parts.push(`<b>${label}:</b> ${v}`);
+    if (v) parts.push(`${label}: ${v}`);
   };
 
   if (form.id === 'custom-form') {
-    parts.push('\n— Конструктор лампы —');
+    parts.push('');
+    parts.push('-- Конструктор лампы --');
     push('Форма основания', fd.get('shape'));
     push('Размер / длина', fd.get('size'));
     push('Цвет света', fd.get('color'));
     push('LED-лент', fd.get('strips'));
     push('Пожелания', fd.get('message'));
-    parts.push('\n— Контакты —');
+    parts.push('');
+    parts.push('-- Контакты --');
     push('Имя', fd.get('name'));
     push('Телефон/Telegram', fd.get('phone'));
   } else {
-    parts.push('\n— Заказ —');
+    parts.push('');
+    parts.push('-- Заказ --');
     push('Имя', fd.get('name'));
     push('Телефон/Telegram', fd.get('phone'));
     push('Тип', fd.get('type'));
@@ -47,7 +50,6 @@ async function submitForm(e) {
       body: JSON.stringify({
         chat_id: CHAT_ID,
         text: buildMessage(form),
-        parse_mode: 'HTML',
         disable_web_page_preview: true,
       }),
     });
