@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛампаДом — лампы ручной работы из дерева и эпоксидной смолы</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">Свет<span>Лампа</span></a>
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#custom">Своя лампа</a>
+        <a href="#resin">Из смолы</a>
+        <a href="#about">О мастере</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#order" class="btn btn--primary">Заказать</a>
+      <button class="burger" aria-label="Меню">☰</button>
+    </div>
+  </header>
+
+  <!-- Герой -->
+  <section id="hero" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="badge">Ручная работа</span>
+        <h1>Лампы, которые дарят <span class="accent">тепло</span> и <span class="accent">уют</span></h1>
+        <p>Натуральное дерево, эпоксидная смола и светодиодные ленты. Каждое изделие — единственное в своём роде, сделано вручную под ваш интерьер.</p>
+        <div class="hero__actions">
+          <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+          <a href="#custom" class="btn btn--ghost">Собрать свою</a>
+        </div>
+        <ul class="hero__points">
+          <li>✦ Деревянные балки со светодиодной лентой</li>
+          <li>✦ Столики и изделия из эпоксидной смолы</li>
+          <li>✦ Изготовим по вашему эскизу</li>
+        </ul>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__mock mock-lamp">
+          <span class="mock-lamp__beam"></span>
+          <span class="mock-lamp__glow"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог -->
+  <section id="catalog" class="section">
+    <div class="container">
+      <h2 class="section__title">Базовые лампы</h2>
+      <p class="section__subtitle">Готовые модели из деревянной балки и LED-ленты. Замените фото на свои, укажите цены.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="card__media"><img src="img/photo_2026-09-14_09-44-57.jpg" alt="Лампа Брус" loading="lazy"></div>
+          <h3 class="card__title">Лампа «Брус»</h3>
+          <p class="card__desc">Цельная деревянная балка, тёплый свет.</p>
+          <div class="card__foot">
+            <span class="card__price">от 7 000 ₽</span>
+            <a href="#order" class="btn btn--small">Заказать</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__media"><img src="img/photo_2026-09-14_10-05-27.jpg" alt="Лампа Волна" loading="lazy"></div>
+          <h3 class="card__title">Лампа «Волна»</h3>
+          <p class="card__desc">Изогнутая балка с эффектом подсветки снизу.</p>
+          <div class="card__foot">
+            <span class="card__price">от 12 000 ₽</span>
+            <a href="#order" class="btn btn--small">Заказать</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__media"><img src="img/photo_2026-09-14_10-06-03.jpg" alt="Лампа Пламя" loading="lazy"></div>
+          <h3 class="card__title">Лампа «Пламя»</h3>
+          <p class="card__desc">Регулируемый цвет света, три ленты.</p>
+          <div class="card__foot">
+            <span class="card__price">от 15 000 ₽</span>
+            <a href="#order" class="btn btn--small">Заказать</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Своя лампа -->
+  <section id="custom" class="section section--dark">
+    <div class="container">
+      <h2 class="section__title">Собери свою лампу</h2>
+      <p class="section__subtitle">Выберите параметры — а мы сделаем её точно по вашему вкусу.</p>
+
+      <form id="custom-form" class="configurator">
+        <div class="config__field">
+          <label class="config__label">Форма основания</label>
+          <div class="segmented">
+            <label class="segment"><input type="radio" name="shape" value="Круглая" checked><span>Круглая</span></label>
+            <label class="segment"><input type="radio" name="shape" value="Квадратная"><span>Квадратная</span></label>
+            <label class="segment"><input type="radio" name="shape" value="Прямоугольная"><span>Прямоугольная</span></label>
+          </div>
+        </div>
+
+        <div class="config__field">
+          <label class="config__label" for="size">Размер / длина (см)</label>
+          <input type="text" id="size" name="size" placeholder="Например: 90" class="input">
+        </div>
+
+        <div class="config__field">
+          <label class="config__label">Цвет света</label>
+          <div class="segmented">
+            <label class="segment"><input type="radio" name="color" value="Тёплый (2700K)" checked><span>Тёплый</span></label>
+            <label class="segment"><input type="radio" name="color" value="Нейтральный (4000K)"><span>Нейтральный</span></label>
+            <label class="segment"><input type="radio" name="color" value="Холодный (6000K)"><span>Холодный</span></label>
+            <label class="segment"><input type="radio" name="color" value="Регулируемый"><span>Регулируемый</span></label>
+          </div>
+        </div>
+
+        <div class="config__field">
+          <label class="config__label" for="strips">Количество LED-лент</label>
+          <select id="strips" name="strips" class="input">
+            <option value="1">Одна</option>
+            <option value="2">Две</option>
+            <option value="3">Три и больше</option>
+          </select>
+        </div>
+
+        <div class="config__field">
+          <label class="config__label" for="custom-msg">Пожелания (необязательно)</label>
+          <textarea id="custom-msg" name="message" class="input" rows="3" placeholder="Например: нужен тёплый дуб, подвес на потолок..."></textarea>
+        </div>
+
+        <fieldset class="config__field">
+          <legend class="config__label">Ваши контакты</legend>
+          <input type="text" name="name" class="input" placeholder="Имя" required>
+          <input type="text" name="phone" class="input" placeholder="Телефон или @telegram" required>
+        </fieldset>
+
+        <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+        <p class="form-status" data-status="custom"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Смола -->
+  <section id="resin" class="section">
+    <div class="container">
+      <h2 class="section__title">Изделия из эпоксидной смолы</h2>
+      <p class="section__subtitle">Столики, подносы, декор. Или создадим что-то уникальное по вашему эскизу.</p>
+      <div class="grid grid--3">
+        <article class="card"><div class="card__media" style="--ph:'Ваше фото'"></div><h3 class="card__title">Столик «Река»</h3><p class="card__desc">Дерево и смола, эффект реки внутри.</p></article>
+        <article class="card"><div class="card__media" style="--ph:'Ваше фото'"></div><h3 class="card__title">Столешница</h3><p class="card__desc">Индивидуальные размеры и цвет.</p></article>
+        <article class="card"><div class="card__media" style="--ph:'Ваше фото'"></div><h3 class="card__title">Подарок на заказ</h3><p class="card__desc">Ваша идея — наше исполнение.</p></article>
+      </div>
+
+      <div class="resin-cta">
+        <h3>Хотите что-то по своему эскизу?</h3>
+        <p>Опишите задумку — посчитаем и предложим варианты.</p>
+        <a href="#order" class="btn btn--primary">Оформить заказ по эскизу</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- О мастере -->
+  <section id="about" class="section section--alt">
+    <div class="container about">
+      <div class="about__visual"></div>
+      <div class="about__text">
+        <h2 class="section__title">О мастере</h2>
+        <p>Каждое изделие рождается вручную: подбираем дерево, заливаем смолу, монтируем светодиодные ленты. Мы контролируем каждый этап — от эскиза до подключения.</p>
+        <ul class="about__list">
+          <li>✕ Натуральные материалы</li>
+          <li>✕ Безопасные светодиоды</li>
+          <li>✕ Сроки и гарантия</li>
+        </ul>
+        <p class="about__note">Здесь можно вставить текст про вас, свой опыт и подход к работе.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Заказ -->
+  <section id="order" class="section section--dark">
+    <div class="container">
+      <h2 class="section__title">Сделать заказ</h2>
+      <p class="section__subtitle">Заполните форму — заявка придёт мастеру в Telegram, и он свяжется с вами.</p>
+      <form id="order-form" class="order">
+        <div class="order__row">
+          <input type="text" name="name" class="input" placeholder="Ваше имя" required>
+          <input type="text" name="phone" class="input" placeholder="Телефон или @telegram" required>
+        </div>
+        <select name="type" class="input">
+          <option value="">Что хотите заказать?</option>
+          <option value="Готовая лампа из каталога">Готовую лампу из каталога</option>
+          <option value="Своя лампа (конструктор)">Свою лампу (конструктор)</option>
+          <option value="Изделие из смолы по эскизу">Изделие из смолы по эскизу</option>
+        </select>
+        <textarea name="message" class="input" rows="4" placeholder="Опишите задумку: размеры, цвет, материалы, идеи..."></textarea>
+        <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+        <p class="form-status" data-status="order"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="section">
+    <div class="container">
+      <h2 class="section__title">Контакты</h2>
+      <div class="contacts">
+        <a href="tel:+79779832374" class="contact-card">
+          <span class="contact-card__label">Телефон</span>
+          <span class="contact-card__value">8 (977) 983-23-74</span>
+        </a>
+        <a href="https://t.me/ness_bushiyski" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-card__label">Telegram</span>
+          <span class="contact-card__value">@ness_bushiyski</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 СветЛампа. Лампы ручной работы.</span>
+      <span>Телефон: 8 (977) 983-23-74 · Telegram: @ness_bushiyski</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
