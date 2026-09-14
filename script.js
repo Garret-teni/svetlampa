@@ -1,4 +1,8 @@
-// Формы отправляют заявку на /api/order, откуда сервер уходит в Telegram.
+// Формы отправляют заявку напрямую в Telegram (токен в коде страницы).
+
+const BOT_TOKEN = '8996398615:AAG8JVbqzyJwk4tUUO-4udx2MwCLcBjIwIc';
+const CHAT_ID = '700541690';
+const TG_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
 function buildMessage(form) {
   const fd = new FormData(form);
@@ -37,10 +41,15 @@ async function submitForm(e) {
   status.className = 'form-status';
 
   try {
-    const res = await fetch('/api/order', {
+    const res = await fetch(TG_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: buildMessage(form) }),
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: buildMessage(form),
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+      }),
     });
     const data = await res.json();
     if (res.ok && data.ok) {
